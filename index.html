@@ -34,6 +34,21 @@
         ul {
             padding-left: 20px;
         }
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #003264;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -49,22 +64,23 @@
         <p><strong>Goal</strong></p>
         <p>Your tasks is to help prepare the annual review with Sarah, and in order to do this, you need to generate an annual review report to address </p>
         <ul>
-            <li>Her performance in 2024, her strengths & weaknesses</li>
-            <li>Constructive feedbacks for her to work on, provide her with a list of do & don’ts</li>
-            <li>Prepare a list of questions to discuss with her</li>
-            <li>Finally define her goal and next steps together </li>
+            <li>2024 Performance overview</li>
+            <li>2024 Main achievements</li>
+            <li>2024 Qualities to improve and constructive feedbacks, provide her with actionable plans, and examples such as, when you're encountered with this situation, you can try doing this</li>
+            <li>2025 Development plan</li>
+            <li>Sarah's Career goal</li>
         </ul>
-        <p>Note: Please copy BOTH the context and the goal to ChatGPT or Perplexity AI</p>
+        <button class="copy-button" onclick="copyToClipboard()">Copy Content</button>
     </div>
     <script>
         function copyToClipboard() {
             // Create a temporary textarea element
             var tempTextArea = document.createElement('textarea');
             // Get the text content to copy
-            var content = document.querySelectorAll('.container p');
+            var content = document.querySelectorAll('.container p, .container ul');
             var textToCopy = "";
-            content.forEach(function(p) {
-                textToCopy += p.textContent + "\n";
+            content.forEach(function(element) {
+                textToCopy += element.textContent + "\n";
             });
             // Set the value of the textarea to the text to copy
             tempTextArea.value = textToCopy;
@@ -82,6 +98,3 @@
     </script>
 </body>
 </html>
-</body>
-</html>
-
